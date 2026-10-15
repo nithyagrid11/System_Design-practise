@@ -1,0 +1,16 @@
+services:
+  redis:
+    image: redis:latest
+    container_name: cache_lab_redis
+    ports:
+      - "6379:6379"
+
+  postgres:
+    image: postgres:18-alpine
+    container_name: cache_lab_postgres
+    environment:
+      POSTGRES_DB: cache_lab
+      POSTGRES_USER: cache_user
+      POSTGRES_PASSWORD: cache_pass
+    ports:
+      - "5433:5432"
